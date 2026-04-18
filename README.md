@@ -34,3 +34,38 @@ Le diagramme UML du projet est disponible dans le fichier :
 ## Lancer le projet
 bash
 dotnet run
+
+---
+
+## Entités
+| Entité      | Attributs                     | Comportements          |
+| ----------- | ----------------------------- | ---------------------- |
+| Client      | nom, prénom, email, téléphone | reserver(), annuler()  |
+| Voyage      | destination, dateDepart, prix | afficherDetails()      |
+| Vol         | numeroVol, compagnie          | afficherDetails()      |
+| Hotel       | nomHotel, nombreNuits         | afficherDetails()      |
+| Reservation | dateReservation, statut       | confirmer(), annuler() |
+| Paiement    | montant, date, methode        | effectuerPaiement()    |
+| Destination | nom, pays, description        | afficher()             |
+| Bagage      | poids, type                   | verifierPoids()        |
+
+---
+
+## Relations
+
+# Héritage
+
+* Vol hérite de Voyage
+* Hotel hérite de Voyage
+
+# Associations
+
+* Reservation possède un Client
+* Reservation possède un Voyage
+* Paiement possède une Reservation
+* Voyage possède une Destination
+
+# Méthode redéfinie
+
+* afficherDetails() est définie dans Voyage et redéfinie dans Vol et Hotel
+
